@@ -1,0 +1,37 @@
+Sub ColorRows()
+
+'colors every other row with selected color
+'user can determine: the number of rows to be colored, step, color, cleanup
+
+On Error Resume Next
+
+Dim NumberOfRows As Integer, StepNumber As Integer, ColorPicked As Byte
+
+NumberOfRows = InputBox("Enter Number Of Rows")
+StepNumber = InputBox("Enter Step Number")
+ColorPicked = InputBox("Pick one of the three numbers for following colors: 1=black, 3=red 4=green")
+
+For i = 1 To NumberOfRows Step StepNumber
+Rows(i).Interior.ColorIndex = ColorPicked
+Next i
+
+Select Case ColorPicked
+    Case 1
+        MsgBox ("Range of " & NumberOfRows & " rows colored with black every " & StepNumber & " row")
+    Case 3
+        MsgBox ("Range of " & NumberOfRows & " rows colored with red every " & StepNumber & " row")
+    Case 4
+        MsgBox ("Range of " & NumberOfRows & " rows colored with green every " & StepNumber & " row")
+End Select
+
+answer = MsgBox("Do you wish a cleanup?", vbYesNo)
+For i = 1 To NumberOfRows Step StepNumber
+If answer = vbYes Then
+Rows(i).Interior.ColorIndex = 0
+End If
+Next i
+
+End Sub
+
+
+
