@@ -1,0 +1,15 @@
+Sub x()
+Dim msg As Range
+
+On Error Resume Next
+
+Set msg = Rows(6)
+
+For Each c In msg
+
+c.Value = 888
+
+Next c
+
+End Sub
+
