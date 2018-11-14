@@ -1,0 +1,14 @@
+Sub compare_cells_row_by_row()
+
+rownumber = InputBox("How many rows need to be checked?")
+
+For x = 1 To rownumber
+
+If Cells(x, 1).Value = Cells(x, 2).Value Then
+Cells(x, 3).Value = "ok"
+Else
+Cells(x, 3).Value = "check data for consistency"
+End If
+Next x
+
+End Sub
