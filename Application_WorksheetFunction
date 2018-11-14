@@ -1,0 +1,15 @@
+Sub x()
+'using excel index function - assuming data in range A1:I9
+
+
+For i = 1 To 9
+
+msg = Application.WorksheetFunction.Index(Range(Cells(1, 1), Cells(9, 9)), i, i)
+
+Cells(i, 11).Value = msg
+
+
+Next i
+
+End Sub
+
