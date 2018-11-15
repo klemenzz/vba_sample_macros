@@ -1,0 +1,17 @@
+Sub working_with_text_files()
+
+Dim yourfilename As String, yourtext As String
+
+
+yourfilename = InputBox("Type in file name in the following format: yourfilename.txt")
+
+yourtext = InputBox("Type in your text")
+
+Open yourfilename For Output As #1
+Write #1, yourtext
+Close #1
+
+yourpath = Application.GetOpenFilename()
+
+
+End Sub
