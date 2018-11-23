@@ -1,0 +1,15 @@
+Sub deleting_empty_rows()
+
+Range("a1").Select
+
+numberofrows = InputBox("Type in the number of last row")
+
+For y = 0 To numberofrows
+If Selection.Value = "" Then
+Selection.EntireRow.Delete
+Else
+ActiveCell.Offset(1, 0).Select
+End If
+Next y
+
+End Sub
