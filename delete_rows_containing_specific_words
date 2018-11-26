@@ -1,0 +1,18 @@
+Sub delete_rows()
+
+Dim rng As Range
+
+Set rng = Range("a:a")
+
+For Each cell In rng
+
+If cell.Value = "unwanted_word" Then
+
+cell.EntireRow.Delete
+
+End If
+
+Next cell
+ 
+
+End Sub
