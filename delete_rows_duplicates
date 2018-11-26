@@ -1,0 +1,15 @@
+Sub delete_duplicates()
+
+For i = 1 To 200
+
+If Cells(i, 1) = Cells(i + 1, 1) Then
+
+Cells(i + 1, 1).EntireRow.Delete
+
+End If
+
+Next i
+
+End Sub
+
+ 
