@@ -1,13 +1,13 @@
 Sub x()
-Dim msg As Range
+Dim rng As Range
 
 On Error Resume Next
 
-Set msg = Rows(6)
+Set rng = Rows(6)
 
-For Each c In msg
+For Each c In rng
 
-c.Value = 888
+c.value = 888
 
 Next c
 
