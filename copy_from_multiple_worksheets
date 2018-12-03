@@ -1,0 +1,13 @@
+Sub copy_from_multiple_worksheets()
+
+For i = 2 To 50
+
+Worksheets(i).Activate
+
+ActiveSheet.Range("A30:f30").Copy _
+
+    Destination:=Worksheets("Sheet1").Cells(i, 1)
+
+Next i
+
+End Sub
