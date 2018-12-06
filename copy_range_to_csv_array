@@ -1,0 +1,23 @@
+Sub copy_range_to_array()
+
+Dim arr() As String
+Dim Rng As Range
+
+Set Rng = ActiveSheet.UsedRange
+counter = Rng.Cells.Count
+ReDim arr(counter) As String
+
+For Each cell In Rng.Cells
+arr(x) = cell.Value
+x = x + 1
+Next cell
+
+prt = Join(arr, ",")
+
+FilePath = Application.DefaultFilePath & "\try1.csv"
+
+Open FilePath For Append As #1
+Write #1, prt
+Close #1
+
+End Sub
